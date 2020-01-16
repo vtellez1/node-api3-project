@@ -22,8 +22,6 @@ router.post('/', validateUser, (req, res) => {
 
 // Insert new post for specific user -- /api/users/:id/posts
 router.post('/:id/posts', validateUserId, validatePost, (req, res) => {
-  const id = req.params.id;
-
   Posts.insert(post.req.body)
   .then(post =>{
     res.status(201).json(post);
